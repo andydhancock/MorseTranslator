@@ -2,12 +2,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MorseCodeTranslator {
-    private Map<Character, String> morseCodeMap;
-    private static Map<String, Character> englishMap;
+    private static final Map<Character, String> morseCodeMap = new HashMap<>();
+    private static final Map<String, Character> englishMap =  new HashMap<>();
 
     public MorseCodeTranslator() {
-        morseCodeMap = new HashMap<>();
-        englishMap = new HashMap<>();
+
         morseCodeMap.put(' ', "  ");
         morseCodeMap.put('A', "*-");
         morseCodeMap.put('B', "-***");
@@ -75,7 +74,7 @@ public class MorseCodeTranslator {
         return morseCode.trim();
     }
 
-    public static String toEnglish(String morseCode) {
+    public String toEnglish(String morseCode) {
 
         String english = "";
 
